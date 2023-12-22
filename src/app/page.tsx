@@ -1,9 +1,5 @@
-import { ThemeToggle } from './components/Theme/ThemeToggle'
-
 export default function Home() {
   return (
-    <div>
-      <ThemeToggle />
-    </div>
+    <div className="flex justify-between items-center py-2 px-2">Bom dia</div>
   )
 }

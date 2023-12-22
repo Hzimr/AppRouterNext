@@ -8,12 +8,12 @@ export function ThemeToggle() {
 
   return (
     <button
-      className="rounded-md bg-black px-1 py-1 font-semibold text-white dark:bg-white dark:text-black"
+      className="rounded-md bg-black px-1 py-1 font-semibold text-white dark:bg-white dark:text-black "
       onClick={() => {
         setTheme(theme === 'light' ? 'dark' : 'light')
       }}
     >
-      <SunMoon />
+      <SunMoon className="h-5 w-5" />
     </button>
   )
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './components/Theme/ThemeProvider'
+import { ThemeToggle } from './components/Theme/ThemeToggle'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark antialiased">
       <body className={inter.className}>
-        <ThemeProvider attribute="class">{children}</ThemeProvider>
+        <ThemeProvider attribute="class">
+          <header className="flex items-center justify-between px-2 py-2">
+            <p>Bom dia</p>
+            <ThemeToggle />
+          </header>
+          <div className="px-2 py-2">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )
