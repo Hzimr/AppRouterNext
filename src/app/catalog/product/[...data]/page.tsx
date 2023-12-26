@@ -1,4 +1,5 @@
-'use client'
+import { AddToCartButton } from './add-to-cart-button'
+
 interface ProductProps {
   params: {
     data: string[]
@@ -12,14 +13,12 @@ interface ProductProps {
 // Simula a requisição http --stream http://localhost:3000
 // Renderizar um componente pelo lado do servidor de forma PARCIAL
 
-export default function Product({ params }: ProductProps) {
+export default async function Product({ params }: ProductProps) {
   const [productId, size, color] = params.data
 
-  console.log(params)
-
-  function addToCart() {
-    console.log('adicionou ao carrinho')
-  }
+  const response = await fetch('https://api.github.com/users/diego3g')
+  const user = await response.json()
+  // await e fecth causam vários recarregamentos de página em um use client
 
   return (
     <div>
@@ -27,7 +26,7 @@ export default function Product({ params }: ProductProps) {
       <p>Size: {size}</p>
       <p>Color: {color}</p>
 
-      <button onClick={addToCart}>Adicionar ao carrinho</button>
+      <AddToCartButton />
     </div>
   )
 }
