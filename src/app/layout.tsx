@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class">
           <header className="flex items-center justify-between px-2 py-2">
-            <p>Bom dia</p>
+            <p>Cabeçalho</p>
             <ThemeToggle />
           </header>
           <div className="px-2 py-2">{children}</div>
