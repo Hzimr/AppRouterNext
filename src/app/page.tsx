@@ -1,12 +1,26 @@
-export default async function Home() {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
+import { Suspense } from 'react'
 
-  const response = await fetch('https://api.github.com/users/hzimr')
-  const user = await response.json()
+import { GithubProfile } from './components/github-profile'
+import { LongWaitComponent } from './components/long-wait-component'
+
+export default async function Home() {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
   return (
-    <div className="flex justify-between items-center py-2 px-2">
-      <pre>{JSON.stringify(user, null, 2)}</pre>
+    <div>
+      <h1>Home</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio
+        laudantium at in quasi recusandae deleniti, delectus libero, sit earum
+        voluptas totam alias voluptates praesentium. Error commodi harum ducimus
+        ex velit?
+      </p>
+      <Suspense fallback={<p>Carregando LongWaitComponent</p>}>
+        <LongWaitComponent />
+      </Suspense>
+      <Suspense fallback={<p>Carregando GithubProfile</p>}>
+        <GithubProfile />
+      </Suspense>
     </div>
   )
 }
