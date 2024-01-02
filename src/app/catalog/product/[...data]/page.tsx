@@ -18,7 +18,7 @@ export default async function Product({ params }: ProductProps) {
 
   const response = await fetch('https://api.github.com/users/diego3g')
   const user = await response.json()
-  // await e fecth causam vários recarregamentos de página em um use client
+  // await e fetch causam vários recarregamentos de página em um use client
 
   return (
     <div>

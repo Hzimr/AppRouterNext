@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Test } from './test'
 
 export function AddToCartButton() {
   const [count, setCount] = useState(0)
@@ -8,5 +9,10 @@ export function AddToCartButton() {
   function addToCart() {
     setCount((state) => state + 1)
   }
-  return <button onClick={addToCart}>Adicionar ao carrinho ({count})</button>
+  return (
+    <div>
+      <button onClick={addToCart}>Adicionar ao carrinho ({count})</button>
+      <Test />
+    </div>
+  )
 }
