@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-// Suspense API component, loanding.tsx Global
+// Suspense API component, loading.tsx Global
 import { GithubProfile } from './components/github-profile'
 import { LongWaitComponent } from './components/long-wait-component'
 
