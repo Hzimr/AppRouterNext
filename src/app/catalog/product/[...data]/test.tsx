@@ -1,7 +1,5 @@
-// Está sendo utilizado dentro de um Client Component
+export async function Test() {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
-export function Test() {
-  return <h1 onClick={() => {}}>Hello World</h1>
+  return <h1>Hello World</h1>
 }
-
-// Client Boundaries (tudo é Client Component)
